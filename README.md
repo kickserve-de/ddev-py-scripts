@@ -79,6 +79,7 @@ Bevor du startest, installiere:
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Formular Beispiel</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
    </head>
    <body>
        <h1>Bitte Namen und E-Mail eingeben</h1>
@@ -103,7 +104,63 @@ Bevor du startest, installiere:
 
 ---
 
-## **5. Flask-App in DDEV starten**
+## **5. CSS-Styles für das Formular**
+Erstelle eine CSS-Datei `static/styles.css` mit folgenden Inhalten:
+
+```css
+/* Styles für das Formular */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h2 {
+    margin-top: 20px;
+}
+```
+
+---
+
+## **6. Flask-App in DDEV starten**
 1. **DDEV-Container starten (falls nicht aktiv)**:
    ```sh
    ddev start
@@ -120,7 +177,7 @@ Bevor du startest, installiere:
 
 ---
 
-## **6. Automatischer Start mit DDEV**
+## **7. Automatischer Start mit DDEV**
 Damit Flask automatisch startet, erstelle die Datei `start.sh`:
 
 ```sh
@@ -143,14 +200,13 @@ hooks:
 
 ---
 
-## **7. Erweiterungen & Nächste Schritte**
+## **8. Erweiterungen & Nächste Schritte**
 ✅ **Daten werden vom Python-Backend verarbeitet**  
 ✅ **Speicherung in Datei (`data.txt`) als Beispiel**  
 ✅ **Anzeige der Formulardaten nach Absenden im HTML-Template**  
+✅ **Styling mit CSS für ein ansprechendes Design**  
 
 ### **Mögliche Erweiterungen**
 - **Speicherung in SQLite oder PostgreSQL**
 - **Daten validieren & Fehlerbehandlung**
 - **Dynamische HTML-Ausgabe mit Jinja2**
-
-Falls du Anpassungen möchtest, lass es mich wissen! 🚀
